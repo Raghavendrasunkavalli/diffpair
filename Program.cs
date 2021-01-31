@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace diffpair
 {
@@ -9,7 +11,8 @@ namespace diffpair
             try
                {
 
-                int[] arr = { 4, 1, 5, 6, 8 };// initializing array with variable name arr
+                int[] arr1 = { 3, 1, 4, 1, 5 };// initializing array with variable name arr
+                int[] arr = arr1.Distinct().ToArray();
                 Console.WriteLine("Q4: Enter the absolute difference to check");// Printing display message for user.
                 int k = Convert.ToInt32(Console.ReadLine());// Converting string to integer type
                 int count = 0;// Starting a counter
@@ -19,6 +22,7 @@ namespace diffpair
                     {
                         if (arr[i] - arr[j] == k || arr[j] - arr[i] == k)//If the difference between first and second element is equal to k, counter is incremented by 1.
                         {
+
                             count++;
                         }
 
